@@ -8,7 +8,7 @@ Articles
 </head>
 <body>
 
-<%Article.all.each do |article|%>
+<%@articles.each do |article|%>
 <div>
    <p><%= article.title%></p>
    <p><%= article.content%></p>
