@@ -1,0 +1,8 @@
+<a href="/todos/new"> Create Todo </a>
+
+<ul>
+<% @articles.each do |article| %>
+  <li><%= article.title %></li>
+  <li><%= article.content %></li>
+<% end %>
+</ul>
