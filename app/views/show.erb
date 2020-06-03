@@ -1,0 +1,8 @@
+<%=Article.find(@article).title%>
+<%=Article.find(@article).content%>
+
+
+<form method="post" action="/articles/<%=@article%>">
+<input id="hidden" type="hidden" name="_method" value="DELETE">
+<input type="submit" value="delete">
+</form>

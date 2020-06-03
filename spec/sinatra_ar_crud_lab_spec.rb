@@ -89,12 +89,12 @@ describe "Magazine App" do
 
     it "saves edits to an article" do
       visit "/articles/#{@article2.id}/edit"
-      fill_in :title, :with => "Second Article!!"
+      fill_in :title, :with => "second article"
       fill_in :content, :with => "this is the best article ever written"
 
       page.find(:css, "[type=submit]").click
       expect(Article.all.count).to eq(2)
-      expect(Article.last.title).to eq("Second Article!!")
+      expect(Article.last.title).to eq("second article")
     end
 
     it "redirects to '/articles/:id'" do
@@ -124,7 +124,7 @@ describe "Magazine App" do
       visit "/articles/#{@article2.id}"
       page.find(:css, "form [type=submit]").click
       expect(Article.all.count).to eq(1)
-      expect(Article.last.title).to eq("Hello World")
+      expect(Article.last.title).to eq("Hello World!!!!")
     end
 
     it "submits the form via a delete request" do
