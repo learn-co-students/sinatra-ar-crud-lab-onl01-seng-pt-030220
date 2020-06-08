@@ -44,10 +44,10 @@ class ApplicationController < Sinatra::Base
   end
   
 
-  delete '/articles/:id' do
-   # binding.pry
-    Article.find(params[:id]).destroy
-    erb :index
+  delete '/articles/:id/delete' do
+   #binding.pry
+    Article.find(params[:id]).delete
+    redirect '/articles'
   end
 
   
