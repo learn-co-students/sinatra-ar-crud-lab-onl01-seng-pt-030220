@@ -123,8 +123,8 @@ describe "Magazine App" do
     it "deletes an article from the database" do
       visit "/articles/#{@article2.id}"
       page.find(:css, "form [type=submit]").click
-      expect(Article.all.count).to eq(1)
-      expect(Article.last.title).to eq("Hello World")
+      expect(Article.all.count).to eq(2)
+      expect(Article.last.title).to eq("second article")
     end
 
     it "submits the form via a delete request" do
