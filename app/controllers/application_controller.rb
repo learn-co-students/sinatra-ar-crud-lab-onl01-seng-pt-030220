@@ -9,40 +9,17 @@ class ApplicationController < Sinatra::Base
   end
 
 
+  get '/articles' do
+    @articles = Article.all
+    erb :index
+  end
 
-
-get '/articles/new' do
-  @article = Article.new(params[:article])
-  #display the form
-  erb :index
-  #HOW TO REDIRECT???
-    redirect '/articles/:id'
-#NEEDS TO REDIRECT TO articles/:id
-end
-
-
+  get '/articles/:id' do
+    @article = Article.find_by(:id, params[:id])
+    erb :show
+  end
 
 
 
-
-
-
-
-
-
-
-
-  # get '/' do
-  # end
-
-  # get '/show' do
-  #   @articles = Article.all
-  #   erb :show
-  # end
-
-  # get '/article' do
-  #   @articles = Article.all
-  #   erb :index
-  # end
 
 end
