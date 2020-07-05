@@ -41,9 +41,14 @@ class ApplicationController < Sinatra::Base
     #!save changes put into forms
     @article.update(title: params[:title], content: params[:content])
     @article.save
-    redirect "/articles/#{params[:id]}"
+    
+    redirect to "/articles/#{Article.last.id}"
   end
 
-
+  delete '/articles/:id' do
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect '/articles'
+  end
 
 end
